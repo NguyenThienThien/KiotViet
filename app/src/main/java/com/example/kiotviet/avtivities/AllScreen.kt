@@ -42,6 +42,12 @@ fun AllScreen(){
         Category(id = "3", name = "lầu 2"),
     )
 
+    val filteredRoom = if (selectedIndex != null) {
+        listRoom.filter { it.category == selectedIndex?.id }
+    } else {
+        listRoom
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -67,12 +73,12 @@ fun AllScreen(){
             }
         }
         
-        Spacer(modifier = Modifier.padding(8.dp))
+        Spacer(modifier = Modifier.padding(4.dp))
 
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
         ) {
-            items(listRoom.chunked(2)) { rowItems ->
+            items(filteredRoom.chunked(2)) { rowItems ->
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)

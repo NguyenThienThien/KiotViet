@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,13 +22,16 @@ import androidx.compose.ui.unit.sp
 import com.example.kiotviet.R
 
 @Composable
-fun ToolBar(){
+fun ToolBar() {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(10.dp)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Row(
             modifier = Modifier.weight(1f),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Image(
                 painter = painterResource(id = R.drawable.menu),
@@ -58,12 +62,13 @@ fun ToolBar(){
                 .weight(1f),
             horizontalArrangement = Arrangement.End
         ) {
-            Row(
+
+            IconButton(
+                onClick = { /*TODO*/ },
                 modifier = Modifier
                     .padding(end = 10.dp)
                     .clip(RoundedCornerShape(30.dp))
                     .background(Color(0xFFddddddd))
-                    .padding(5.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.search),
@@ -74,11 +79,12 @@ fun ToolBar(){
                 )
             }
 
-            Row(
+            IconButton(
+                onClick = { /*TODO*/ },
                 modifier = Modifier
+                    .padding(end = 10.dp)
                     .clip(RoundedCornerShape(30.dp))
                     .background(Color(0xFFddddddd))
-                    .padding(5.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.icon_notification),

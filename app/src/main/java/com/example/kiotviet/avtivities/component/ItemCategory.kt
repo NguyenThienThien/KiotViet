@@ -30,7 +30,6 @@ fun ItemTypes(
 ) {
     Row(
         modifier = Modifier
-            .width(120.dp)
             .height(43.dp)
             .clip(RoundedCornerShape(50.dp))
             .background(if (isSelected) Color(0xFF0c70c8) else Color.White)
@@ -42,8 +41,8 @@ fun ItemTypes(
             text = category.name,
             fontSize = 16.sp,
             fontWeight = FontWeight.Medium,
-            modifier = Modifier.weight(1f),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(10.dp)
         )
     }
 

@@ -58,15 +58,15 @@ fun HomeScreen() {
                 ) {
                     Scaffold(
                         topBar = {
-                            TabRow(selectedTabIndex = selectedTabIndex, contentColor = Color(0xFF0c70c8)) {
+                            TabRow(selectedTabIndex = selectedTabIndex, contentColor = Color.Black) {
                                 Tab(selected = selectedTabIndex == 0, onClick = { selectedTabIndex = 0 }) {
-                                    Text("Tất cả", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold)
+                                    Text("Tất cả", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold, color = if(selectedTabIndex == 0) Color(0xFF0067c7) else Color.Black)
                                 }
                                 Tab(selected = selectedTabIndex == 1, onClick = { selectedTabIndex = 1 }) {
-                                    Text("Sử dụng", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold)
+                                    Text("Sử dụng", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold, color = if(selectedTabIndex == 1) Color(0xFF0067c7) else Color.Black)
                                 }
                                 Tab(selected = selectedTabIndex == 2, onClick = { selectedTabIndex = 2 }) {
-                                    Text("Còn trống", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold)
+                                    Text("Còn trống", modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold, color = if(selectedTabIndex == 2) Color(0xFF0067c7) else Color.Black)
                                 }
                             }
                         }
